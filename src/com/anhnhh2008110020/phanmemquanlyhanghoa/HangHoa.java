@@ -1,6 +1,14 @@
-package com.anhnhh2008110020.phanmemquanlyhanghoa; //OOP: Object Oriented Programming
+package com.anhnhh2008110020.phanmemquanlyhanghoa; 
+//OOP: Object Oriented Programming
 
 //Author: NguyenHoHaiAnh-2008110020-PM01
+import java.text.NumberFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
+
+
 
 public abstract class HangHoa {
     // lớp cha trừu tượng-abstract class
@@ -10,8 +18,7 @@ public abstract class HangHoa {
     private double donGia;
     private int soLuongTon;
 
-    private static int count;
-
+    
     //method
     // Phương thức set get
 
@@ -20,7 +27,11 @@ public abstract class HangHoa {
     }
 
     public void setMaHang(String maHang) {
-        this.maHang = maHang;
+        if(maHang != null){
+            this.maHang = maHang;
+        }else{
+            System.out.println("Ma hang khong duoc rong");
+        }
     }
 
     public String getTenHang() {
@@ -28,7 +39,13 @@ public abstract class HangHoa {
     }
 
     public void setTenHang(String tenHang) {
-        this.tenHang = tenHang;
+        //code rang buoc
+        if(tenHang != null){
+            this.tenHang = tenHang;
+        }else{
+            System.out.println("Ten hang khong duoc rong");
+           
+        }
     }
 
     public double getDonGia() {
@@ -36,7 +53,11 @@ public abstract class HangHoa {
     }
 
     public void setDonGia(double donGia) {
-        this.donGia = donGia;
+        if(donGia > 0){
+            this.donGia = donGia;
+        }else{
+            System.out.println("Don gia > 0");
+        }
     }
 
     public int getSoLuongTon() {
@@ -44,30 +65,56 @@ public abstract class HangHoa {
     }
 
     public void setSoLuongTon(int soLuongTon) {
-        this.soLuongTon = soLuongTon;
+      if(soLuongTon>=0){
+          this.soLuongTon = soLuongTon;
+      }else{
+          System.out.println("So luong ton >=0 ");
+      }
     }
 
-    private void tangCount() {
-        count++;
-    }
-    public abstract double danhGia();
-
+    
 // Default Constructor
     public HangHoa(){
-        this.tangCount();
+
+        
     }
 // Paramenteried Constructor
 
     public HangHoa(String maHang, String tenHang, double donGia, int soLuongTon) {
-        this.maHang = maHang;
-        this.tenHang = tenHang;
-        this.donGia = donGia;
-        this.soLuongTon = soLuongTon;
+        this.setMaHang(maHang);
+        this.setTenHang(tenHang);
+        this.setDonGia(donGia);
+        this.setSoLuongTon(soLuongTon);
+        
     }
+
+    public double tinhTien(){
+        return (getSoLuongTon() * getDonGia());
+    }
+
+    public static Date chuoiSangNgay(String chuoi) throws ParseException{
+        Date date;
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/MM/yyyy");
+        date = simpleDateFormat.parse(chuoi);
+        return date;
+    }
+
+    public static String ngaySangChuoi(Date date){
+        String ngay = null;
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/MM/yyyy");
+        ngay = simpleDateFormat.format(date);
+        return ngay;
+    }
+    
+    
+    Locale localeVN = new Locale("Vi", "VN");
+    Locale localeKW = new Locale("KW");
+    NumberFormat tienVietNam = NumberFormat.getCurrencyInstance(localeVN);
+    NumberFormat donViCongSuat = NumberFormat.getCurrencyInstance(localeKW);
 
     @Override
     public String toString() {
-        return "HangHoa [donGia=" + donGia + ", maHang=" + maHang + ", soLuongTon=" + soLuongTon + ", tenHang="
+        return "HangHoa [donGia=" +tienVietNam.format(donGia) + ", maHang=" + maHang + ", soLuongTon=" + soLuongTon + ", tenHang="
                 + tenHang + "]";
     }
 
