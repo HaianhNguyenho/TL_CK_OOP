@@ -54,20 +54,15 @@ public class Main {
            System.out.println("         2.6 Gia tri thap nhat                       ");
            System.out.println("         2.7 Tong gia tri thap nhat                  ");
            System.out.println(">>   3. Sap xep:                                     ");
-           System.out.println("         3.1 <Tang dan>                              ");
-           System.out.println("             3.1.1 Gia nhap                          ");
-           System.out.println("             3.1.2 Ngay nhap                         ");
-           System.out.println("             3.1.3 Loai va ngay nhap                 ");
-           System.out.println("             3.1.4 Loai va gia nhap                  ");
-           System.out.println("         3.2 >Giam gia<                              ");
-           System.out.println("             3.2.1 Gia nhap                          ");
-           System.out.println("             3.2.2 Ngay nhap                         ");
-           System.out.println("             3.2.3 Loai va ngay nhap                 ");
-           System.out.println("             3.2.4 Loai va gia nhap                  ");
+           System.out.println("         3.1 Sap xep hang hoa tang dan theo gia      ");
+           System.out.println("         3.2 Sap xep hang hoa giam dan theo gia      ");
+           System.out.println("         3.3 Sap xep hang hoa tang theo loai va sltk ");
+           System.out.println("         3.4 Sap xep hang hoa giam theo loai va sltk ");
+           System.out.println("         3.5 Sap xep hang hoa tang dan theo loai va d");
+           System.out.println("            3.6 Sap xep hang hoa giam dan theo loai&d");
            System.out.println(">>   4. Thong ke:                                    ");
-           System.out.println("         4.1 Tong so luong hang hoa                  ");
-           System.out.println("         4.2 Tong chi phi hang hoa                   ");
-           System.out.println("         4.3 So luong tung loai hang                 ");
+           System.out.println("         4.1 Hang hoa theo loai                      ");
+           System.out.println("         4.2 Tong tat ca hang hao                    ");
            System.out.println(">>   0 Thoat chuong chinh                            ");
            System.out.println("=====================================================");
            System.out.print("Nhap lua chon cua ban (1-4): ");
@@ -88,6 +83,8 @@ public class Main {
                    case 2: list.suaHangHoa();
                    break;
                    case 3: list.xoaHangHoaTheoMa();
+                   break;
+                   case 0: System.out.println("Thoat");
                    break;
 
                    default:
@@ -123,20 +120,73 @@ public class Main {
                     break;
                     case 7: list.timKiemSanPhamTongGiaTriThap();
                     break;
+                    case 0: System.out.println("    Thoat   ");
+                    break;
                     default:
                     System.out.println("Nhap sai.Vui long thu lai");
                     break;
                 }
                 break;
             }
-               
+            case 3:{
+                System.out.println("=================MENU========================================");
+                System.out.println(">>3.1 Sap xep hang hoa tang dan theo gia                     ");
+                System.out.println(">>3.2 Sap xep hang hoa giam dan theo gia                     ");
+                System.out.println(">>3.3 Sap xep hang hoa tang dan theo loai va so luong ton kho");
+                System.out.println(">>3.4 Sap xep hang hoa giam dan theo loai va so luong ton kho");
+                System.out.println(">>3.5 Sap xep hang hoa tang dan theo loai va don gia         ");
+                System.out.println(">>3.6 Sap xep hang hoa giam dan theo loai va don gia         ");
+                System.out.println("            0. Thoat                                         ");
+                System.out.print("Nhap lua chon cua ban(1-6): ");
+                luaChon = varInput.nextInt();
+                switch(luaChon){
+                    case 1: list.sapXepHangHoaTangDanTheoGia();
+                    break;
+                    case 2: list.sapXepHangHoaGiamDanTheoGia();
+                    break;
+                    case 3: list.sapXepHangHoaTangDanTheoLoaiVaSoLuongTonKho();
+                    break;
+                    case 4: list.sapXepGiamDanTheoLoaiVaSoLuongTonKho();
+                    break;
+                    case 5: list.sapXepTangDanTheoLoaiVaDonGia();
+                    break;
+                    case 6: list.sapXepGiamDanTheoLoaiVaDonGia();
+                    break;
+                    case 0: System.out.println("   Thoat    ");
+                    default:
+                    System.out.println("Nhap sai. Vui long thu lai");
+                    break;
+
+                }
+                break;
+            }
+            case 4: {
+                System.out.println("================MENU===========");
+                System.out.println(">>4.1 Thong ke theo loai hh    ");
+                System.out.println(">>4.2 Thong ke tong hh         ");
+                System.out.println(">>         0. Thoat            ");
+                System.out.print("Nhap su lua chon cua ban: ");
+                luaChon = varInput.nextInt();
+                switch(luaChon){
+                    case 1: list.thongKeTheoLoaiHangHoa();
+                    break;
+                    case 2: list.thongKeTongHangHoa();
+                    break;
+                    case 0: System.out.println("Thoat");
+                    break;
+                    default:
+                    System.out.println("Nhap sai. Vui long nhap lai");
+                    break;
+                }
+                break;
+
+            }
+            case 0: System.out.println("       Thoat        ");
+            default:
+            System.out.println("Ban da nhap sai. Vui long nhap thu lai");
+            break;
+            
            }
-           
-
-
-
-
-
 
        }
 

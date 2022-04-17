@@ -882,6 +882,7 @@ public class ListHangHoa {
     }
     Locale locale = new Locale("VN");
     NumberFormat tienVietNam = NumberFormat.getCurrencyInstance(locale);
+    
     public void thongKeTongHangHoa(){
         double tongSoLuong = 0, tongChiPhi = 0;
         for (HangHoa hangHoa : listHH) {
