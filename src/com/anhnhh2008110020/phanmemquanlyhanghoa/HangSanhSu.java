@@ -1,7 +1,9 @@
 package com.anhnhh2008110020.phanmemquanlyhanghoa;
 
+import java.text.NumberFormat;
 import java.text.ParseException;
 import java.util.Date;
+import java.util.Locale;
 
 public class HangSanhSu extends HangHoa{
     private String nhaSanXuat;
@@ -35,6 +37,8 @@ public class HangSanhSu extends HangHoa{
     public void setNgayNhapKho(Date ngayNhapKho) {
         this.ngayNhapKho = ngayNhapKho;
     }
+    Locale localeVN = new Locale("Vi", "VND");
+    NumberFormat tienVietNam = NumberFormat.getCurrencyInstance(localeVN);
 
     @Override
     public String toString() {

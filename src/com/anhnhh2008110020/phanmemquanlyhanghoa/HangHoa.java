@@ -91,6 +91,7 @@ public abstract class HangHoa {
     public double tinhTien(){
         return (getSoLuongTon() * getDonGia());
     }
+   
 
     public static Date chuoiSangNgay(String chuoi) throws ParseException{
         Date date;
@@ -107,15 +108,16 @@ public abstract class HangHoa {
     }
     
     
-    Locale localeVN = new Locale("Vi", "VN");
-    Locale localeKW = new Locale("KW");
+    Locale localeVN = new Locale("Vi", "VND");
+    Locale localeKW = new Locale("VI","KW");
     NumberFormat tienVietNam = NumberFormat.getCurrencyInstance(localeVN);
     NumberFormat donViCongSuat = NumberFormat.getCurrencyInstance(localeKW);
 
     @Override
     public String toString() {
         return "HangHoa [donGia=" +tienVietNam.format(donGia) + ", maHang=" + maHang + ", soLuongTon=" + soLuongTon + ", tenHang="
-                + tenHang + "]";
+        + tenHang + "]";
+
     }
 
     

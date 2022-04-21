@@ -45,9 +45,10 @@ public class Main {
            System.out.println("         1.1 Phuong thuc them hang hoa`              ");
            System.out.println("         1.2 Phuong thuc sua hang hoa                ");
            System.out.println("         1.3 Phuong thuc xoa hang hoa                ");
+           System.out.println("         1.4 Phuong thuc xuat tat ca hang hoa        ");
            System.out.println(">>   2. Tim kiem theo:                               ");
            System.out.println("         2.1 Loai                                    ");
-           System.out.println("         2.2 Ngay Nhap                               ");
+           System.out.println("         2.2 Ma va xoa                               ");
            System.out.println("         2.3 Gia                                     ");
            System.out.println("         2.4 Gia tri cao nhat                        ");
            System.out.println("         2.5 Tong gia tri cao nhat                   ");
@@ -59,10 +60,10 @@ public class Main {
            System.out.println("         3.3 Sap xep hang hoa tang theo loai va sltk ");
            System.out.println("         3.4 Sap xep hang hoa giam theo loai va sltk ");
            System.out.println("         3.5 Sap xep hang hoa tang dan theo loai va d");
-           System.out.println("            3.6 Sap xep hang hoa giam dan theo loai&d");
+           System.out.println("         3.6 Sap xep hang hoa giam dan theo loai&d   ");
            System.out.println(">>   4. Thong ke:                                    ");
            System.out.println("         4.1 Hang hoa theo loai                      ");
-           System.out.println("         4.2 Tong tat ca hang hao                    ");
+           System.out.println("         4.2 Tong tat ca hang hoa                    ");
            System.out.println(">>   0 Thoat chuong chinh                            ");
            System.out.println("=====================================================");
            System.out.print("Nhap lua chon cua ban (1-4): ");
@@ -73,6 +74,7 @@ public class Main {
                System.out.println("1. Them hang hoa         ");
                System.out.println("2. Sua hang hoa          ");
                System.out.println("3. Xoa hang hoa theo ma  ");
+               System.out.println("4. Xuat tat ca hang hoa  ");
                System.out.println("0 Thoat                  ");
                System.out.println("=========================");
                System.out.print("Nhap lua chon cua ban (1-3): ");
@@ -83,6 +85,8 @@ public class Main {
                    case 2: list.suaHangHoa();
                    break;
                    case 3: list.xoaHangHoaTheoMa();
+                   break;
+                   case 4: list.xuatALLHangHoa();
                    break;
                    case 0: System.out.println("Thoat");
                    break;

@@ -1,7 +1,9 @@
 package com.anhnhh2008110020.phanmemquanlyhanghoa;
 
 
+import java.text.NumberFormat;
 import java.text.ParseException;
+import java.util.Locale;
 
 public class HangDienMay extends HangHoa{
 
@@ -44,6 +46,10 @@ public class HangDienMay extends HangHoa{
             System.out.println("Cong suat bao nhieu KW?");
         }
     }
+    Locale localeVN = new Locale("Vi", "VND");
+    Locale localeKW = new Locale("VI","KW");
+    NumberFormat tienVietNam = NumberFormat.getCurrencyInstance(localeVN);
+    NumberFormat donViCongSuat = NumberFormat.getCurrencyInstance(localeKW);
 
     @Override
     public String toString() {

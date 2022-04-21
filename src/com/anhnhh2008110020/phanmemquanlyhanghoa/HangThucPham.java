@@ -1,7 +1,9 @@
 package com.anhnhh2008110020.phanmemquanlyhanghoa;
 
+import java.text.NumberFormat;
 import java.text.ParseException;
 import java.util.Date;
+import java.util.Locale;
 
 public class HangThucPham extends HangHoa{
     //ke thua
@@ -13,8 +15,8 @@ public class HangThucPham extends HangHoa{
 
    public HangThucPham(){
        super();
-       this.ngayHetHan = null;
        this.ngaySanXuat = null;
+       this.ngayHetHan = null;
        this.nhaCungCap = "";
    }
 
@@ -64,15 +66,19 @@ public class HangThucPham extends HangHoa{
         }
         return isHetHan;
     }
+    Locale localeVN = new Locale("Vi", "VND");
+    NumberFormat tienVietNam = NumberFormat.getCurrencyInstance(localeVN);
+
 
     
 
     @Override
     public String toString() {
-        return super.toString()+"HangThucPham [ngayHetHan=" + ngaySangChuoi(getNgayHetHan()) + ", ngaySanXuat=" + ngaySangChuoi(getNgaySanXuat()) + ", nhaCungCap=" + nhaCungCap
-                + ", Tinh tien= "+tienVietNam.format(tinhTien())+"]";
+        return super.toString()+"HangThucPham [ngaySanXuat=" + ngaySangChuoi(getNgaySanXuat()) + ", ngayHetHan=" + ngaySangChuoi(getNgayHetHan()) + ", nhaCungCap=" + nhaCungCap
+        + ", Tinh tien= "+tienVietNam.format(tinhTien())+"]";
+}
     }
     
     
     
-}
+

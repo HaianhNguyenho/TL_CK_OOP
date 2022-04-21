@@ -8,7 +8,6 @@ import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.List;
 
-
 public class WritingListAndReadingList {
     //1 write list object
 
@@ -40,7 +39,7 @@ public class WritingListAndReadingList {
     public List<HangThucPham> readFromFile(){
         List<HangThucPham> list1 = new ArrayList<>();
         try{
-            FileReader fr = new FileReader("data.txt");
+            FileReader fr = new FileReader("datahanghoa.txt");
             BufferedReader br = new BufferedReader(fr);
             String line = "";
            while(true){
@@ -111,7 +110,6 @@ public class WritingListAndReadingList {
         }catch (Exception e){}
         return list3;
     }
-    
     public static void main(String[] args) throws ParseException{
         WritingListAndReadingList m = new WritingListAndReadingList();
         List<HangThucPham> list1 = m.readFromFile();
@@ -128,6 +126,9 @@ public class WritingListAndReadingList {
         }
     
   
+    
+        
     }
+    
     
 }
